@@ -1,0 +1,10 @@
+contract.info()
+contract.info1()
+contract.info2("hello")
+contract.infoNum()
+contract.info42()
+contract.theMethodName()
+contract.method7123949()
+contract.abi
+contract.password()
+contract.authenticate("ethernaut0")
