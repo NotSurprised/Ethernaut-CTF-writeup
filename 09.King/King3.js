@@ -1,0 +1,1 @@
+contract.sendTransaction({value:toWei(1.0001)})
