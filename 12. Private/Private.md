@@ -76,9 +76,8 @@ Worth to note that, `bytes16(data[2])` will change `data[2]` from 32 bytes to 16
 
 Let's take a pretest on it, `bytes16` will drop rest byte from 17th byte to 32th byte on storage.
 
-So the key will be `web3.toAscii('0x7c8826cea6098e4eafaaede1d3325e8b')`
+So the key will be `'7c8826cea6098e4eafaaede1d3325e8b'`
 
-```javascript
-await contract.unlock(web3.toAscii('0x7c8826cea6098e4eafaaede1d3325e8b'))
-await contract.locked
-```
+![](https://i.imgur.com/E9Zdnsr.png)
+
+![](https://i.imgur.com/gRFCPYb.png)
