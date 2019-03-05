@@ -1,4 +1,5 @@
 # Preservation
+###### tags: `writeup`
 This contract utilizes a library to store two different times for two different timezones. The constructor creates two instances of the library for each time to be stored.
 The goal of this level is for you to claim ownership of the instance you are given.
 Things that might help
@@ -55,6 +56,8 @@ await ethernaut.owner()
 Both `setFirstTime` and `setSecondTime` use delegatecall to set time for each library.
 
 So, there's simple concept to declare the target contract and rewite the `setTime()` function to change instance owner variable.
+
+Moreover, original `setTime()` in `LibraryContract` doesn't declare variable in right struct, so it will modifie the state at `slot 0`.
 
 First, use `setFirstTime()` to change `timeZone1Library` to become our malicious contract address, then transact to it again to make our payload work.
 
