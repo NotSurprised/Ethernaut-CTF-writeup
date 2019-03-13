@@ -1,5 +1,5 @@
 # Re-entrancy
-
+###### tags: `writeup`
 ```javascript
 pragma solidity ^0.4.18;
 
@@ -103,4 +103,12 @@ Well, I try hard but it just false my interaction, then sub my balances without 
 
 Without fallback function, `withdraw()` will work pretty good though.
 
-I think I need a hardcore skill to debug this problem another day then.
+~~I think I need to debug this problem another day then.~~
+
+![](https://i.imgur.com/TtoyUEV.png)
+
+It seems the limit of call.value of this instance is also weird. 
+
+Also due to my contract's withdraw() fail, instance should not sub amount from my account.
+
+I afraid this level get some hotfix in wrong way(more secure).
