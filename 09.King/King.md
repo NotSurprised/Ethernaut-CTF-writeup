@@ -29,11 +29,11 @@ Who paid more on it will become king (not owner), you should remain `king` value
 
 As `require(msg.value >= prize || msg.sender == owner);`, once you submit, level will get king back cause to its ownership.
 
-King contract's callback function will payback your payment and reset `king`'s and `prize`'s value for level.
+King contract's fallback function will payback your payment and reset `king`'s and `prize`'s value for level.
 
-Here's the point, `<address>.transfer()` can be reject and then return `false` to terminate the callback function.
+Here's the point, `<address>.transfer()` can be reject and then return `false` to terminate the fallback function.
 
-So, obviously, we should deploy a new contract which has a always reject payment's callback function and can send some ether to target King contract.
+So, obviously, we should deploy a new contract which has a always reject payment's fallback function and can send some ether to target King contract.
 
 ```javascript
 fromWei((await contract.prize()).toNumber())
