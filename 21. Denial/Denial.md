@@ -41,7 +41,7 @@ contract Denial {
 
 Keep eyes on the level requirement, according `withdraw()` in this contract will withdraw 1% to recipient and 1% to owner, our mission is to make `owner.transfer(amountToSend);` fail.
 
-Therefore, if we deploy a contract which own a callback function will `assert()` a hardcode false statement, that will run out all the gas and stop all incomming transactions. (not matter with `timeLastWithdrawn = now;` and `withdrawPartnerBalances[partner] += amountToSend;` )
+Therefore, if we deploy a contract which own a fallback function will `assert()` a hardcode false statement, that will run out all the gas and stop all incomming transactions. (not matter with `timeLastWithdrawn = now;` and `withdrawPartnerBalances[partner] += amountToSend;` )
 
 ```javascript
 pragma solidity ^0.4.24;
