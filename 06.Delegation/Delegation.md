@@ -49,9 +49,9 @@ I think that is not that clear, here I summary all three call in Solidity:
 * delegatecall()
     Same as `callcode()`, but `msg.sender` in `delegatecall()` will always be first one `delegatecall()` caller's address. 
     
-Therefore, if `Delegation` use `callcode()` in its callback function, when it call its `Delegate` instance, `Delegate` will get `Delegation`'s address as `msg.sender`.
+Therefore, if `Delegation` use `callcode()` in its fallback function, when it call its `Delegate` instance, `Delegate` will get `Delegation`'s address as `msg.sender`.
 
-However, if `Delegation` use `delegatecall()` in its callback function just like current state, when `ddelegatecall()` call `Delegate`, there will be `Delegation`'s caller's address, you, in `msg.sender`.
+However, if `Delegation` use `delegatecall()` in its fallback function just like current state, when `ddelegatecall()` call `Delegate`, there will be `Delegation`'s caller's address, you, in `msg.sender`.
 
 Before we start use `delegatecall()` to call `Delegation`'s `Delegate`'s `pwn()` function, there's still a important point we should concern for it:
 
@@ -70,6 +70,6 @@ or
 ```javascript
 contract.owner()
 web3.eth.sendTransaction({from:player,to:instance,data:web3.sha3("pwn()").slice(0,10),gas: 1111111},function(x,y){console.error(y)});
-//The MetaMask Web3 object does not support synchronous methods like eth_sendTransaction without a callback parameter.
+//The MetaMask Web3 object does not support synchronous methods like eth_sendTransaction without a fallback parameter.
 contract.owner()
 ```
