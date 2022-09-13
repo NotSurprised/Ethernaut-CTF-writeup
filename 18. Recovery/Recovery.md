@@ -55,7 +55,7 @@ There's tricky problem when a contract deploy another contract.
 From [YellowPaper](https://ethereum.github.io/yellowpaper/paper.pdf) chapter 7:
 ![](https://i.imgur.com/GoubqYo.png)
 
-No doubt that new contract's address deploy by smart contract can be preditable.
+No doubt that new contract's address deploy by smart contract can be predictable.
 
 ![](https://i.imgur.com/YDTVMqZ.png)
 
